@@ -28,7 +28,7 @@ function App() {
           </nav>
         </div>
       </header>
-
+      <p>fd</p>
       <main>
         {/* 02. HERO */}
         <section className="hero">
