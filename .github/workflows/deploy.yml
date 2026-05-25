@@ -35,8 +35,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build_output
-          path: |
-            frontend/dist
+          path: frontend/dist
 
   # ========================================================
   # TEST STAGE
@@ -70,7 +69,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build_output
-          path: .
+          path: ./dist_output
 
       - name: Setup SSH Agent
         uses: webfactory/ssh-agent@v0.9.0
@@ -84,14 +83,25 @@ jobs:
 
       - name: Create target folders on VPS
         run: |
-          ssh root@72.61.226.104 "
-            mkdir -p /var/www/1729/frontend/dist
-            
-          "
+          ssh root@72.61.226.104 "mkdir -p /var/www/1729/frontend/dist"
+
+      - name: Debug artifact contents
+        run: |
+          echo "Current directory: $(pwd)"
+          ls -la
+          echo "=== dist_output directory ==="
+          ls -la ./dist_output || echo "dist_output not found"
 
       - name: Upload Frontend
         run: |
-          rsync -avz --delete ./frontend/dist/ root@72.61.226.104:/var/www/1729/frontend/dist/
+          if [ -d ./dist_output ]; then
+            echo "Using dist_output folder"
+            rsync -avz --delete ./dist_output/ root@72.61.226.104:/var/www/1729/frontend/dist/
+          else
+            echo "ERROR: dist_output not found"
+            ls -la
+            exit 1
+          fi
 
       - name: Restart Server Services
         run: |
