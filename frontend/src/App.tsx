@@ -210,21 +210,12 @@ function App() {
             <div className="team-grid">
               <div className="founder-card">
                 <img
-                  src="/founder1.png"
-                  alt="Founder 1"
-                  className="founder-img"
-                />
-                <h3>Sangeetha Soni</h3>
-                <p className="role">Co-Founder & Operations</p>
-              </div>
-              <div className="founder-card">
-                <img
                   src="/founder2.png"
                   alt="Founder 2"
                   className="founder-img"
                 />
-                <h3>Laxmiputtra Uppar</h3>
-                <p className="role">Co-Founder & Lead Engineer</p>
+                <h3>B.Laxmiputra</h3>
+                <p className="role">Founder</p>
               </div>
             </div>
           </div>
