@@ -34,7 +34,7 @@ function App() {
           <div className="container hero-content">
             <div className="hero-text-wrapper">
               <h1 className="hero-title">
-                1729.
+                1729
                 <br />
                 <span className="text-gradient">Engineers Lab</span>
               </h1>
