@@ -208,7 +208,7 @@ function App() {
               </p>
             </div>
             <div className="team-grid">
-              <div className="founder-card">
+              {/* <div className="founder-card">
                 <img
                   src="/founder1.png"
                   alt="Founder 1"
@@ -216,7 +216,7 @@ function App() {
                 />
                 <h3>Sangeetha Soni</h3>
                 <p className="role">Co-Founder</p>
-              </div>
+              </div> */}
 
               <div className="founder-card">
                 <img
@@ -225,7 +225,7 @@ function App() {
                   className="founder-img"
                 />
                 <h3>B.Laxmiputra</h3>
-                <p className="role">Co-Founder</p>
+                <p className="role">Software Engineer</p>
               </div>
             </div>
           </div>
