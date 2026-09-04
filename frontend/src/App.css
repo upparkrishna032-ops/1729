@@ -11,100 +11,165 @@
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* RESET */
+/* =========================================================
+   RESET
+   ========================================================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 html {
   scroll-behavior: smooth;
+
+  /* Prevent mobile browsers from automatically resizing text */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
+
 body {
   font-family:
     "Inter",
     system-ui,
     -apple-system,
+    "Segoe UI",
+    Roboto,
     sans-serif;
   background: var(--bg);
   color: var(--text-main);
   line-height: 1.6;
+
+  /* Keep typography consistent across browsers */
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
 }
+
+/*
+  Keep form controls on the same font as the website.
+  This prevents Android/browser defaults from introducing
+  a different-looking font.
+*/
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
+
 img {
   max-width: 100%;
   display: block;
 }
 
-/* LAYOUT */
+/* =========================================================
+   LAYOUT
+   ========================================================= */
+
 .site {
   overflow-x: hidden;
   min-height: 100vh;
 }
+
 .container {
   width: 100%;
   max-width: var(--container);
   margin: 0 auto;
   padding: 0 32px;
 }
+
 .section {
   padding: 120px 0;
 }
+
 .section-muted {
   background: var(--bg-soft);
 }
 
-/* TYPOGRAPHY */
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
 .eyebrow {
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
   font-size: 12px;
   font-weight: 800;
+  line-height: 1.2;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--primary);
   margin-bottom: 16px;
 }
+
 .section-head {
   text-align: center;
   max-width: 760px;
   margin: 0 auto 64px;
 }
+
 .section-head h2 {
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
   font-size: clamp(32px, 5vw, 46px);
   line-height: 1.1;
   letter-spacing: -0.03em;
   font-weight: 800;
   margin-bottom: 16px;
 }
+
 .section-head p {
   color: var(--text-soft);
   font-size: 18px;
+  line-height: 1.6;
 }
 
-/* HEADER */
+/* =========================================================
+   HEADER
+   ========================================================= */
+
 .header {
   position: sticky;
   top: 0;
   z-index: 1000;
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
 }
+
 .nav {
   height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .logo-content {
   position: relative;
   display: inline-flex;
   align-items: center;
   height: 48px;
 }
+
 .logo-bg-image {
   position: absolute;
   top: 50%;
@@ -116,125 +181,220 @@ img {
   z-index: 1;
   filter: grayscale(100%) contrast(1.1);
 }
+
 .logo-text {
   position: relative;
   transform: translateY(20px);
   z-index: 2;
+
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
   font-size: 26px;
   font-weight: 800;
+  line-height: 1;
   letter-spacing: -0.04em;
 }
+
 .logo span {
   color: var(--primary);
 }
+
 .nav-links {
   display: flex;
   align-items: center;
   gap: 32px;
 }
+
 .nav-links a {
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
   font-weight: 600;
   font-size: 15px;
+  line-height: 1.4;
   color: var(--text-soft);
   transition: var(--transition);
 }
+
 .nav-links a:hover {
   color: var(--text-main);
 }
+
 .nav-contact-link {
   color: var(--primary) !important;
 }
 
-/* BUTTONS */
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   padding: 14px 32px;
   border-radius: 999px;
+
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
   font-weight: 600;
   font-size: 15px;
+  line-height: 1.4;
+
   transition: var(--transition);
   border: 1px solid transparent;
   cursor: pointer;
 }
+
 .btn-primary {
   background: var(--primary);
   color: #fff !important;
 }
+
 .btn-primary:hover {
   background: var(--primary-hover);
   transform: translateY(-2px);
 }
+
 .btn-secondary {
   background: transparent;
   color: var(--text-main) !important;
   border: 1px solid var(--border);
 }
+
 .btn-secondary:hover {
   background: var(--bg-soft);
 }
 
-/* HERO */
+/* =========================================================
+   HERO
+   ========================================================= */
+
 .hero {
   padding: 160px 0 120px;
   text-align: center;
 }
+
 .hero-title {
-  font-size: clamp(48px, 6vw, 72px);
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+
+  /*
+    Responsive typography.
+    This scales naturally instead of jumping to one fixed
+    42px value on every mobile device.
+  */
+  font-size: clamp(40px, 6vw, 72px);
+
   font-weight: 800;
   line-height: 1.1;
+  letter-spacing: -0.035em;
   margin-bottom: 24px;
 }
+
 .text-gradient {
   background: linear-gradient(90deg, #0b57d0 0%, #0842a8 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .hero-subtitle {
   max-width: 700px;
   margin: 0 auto 32px;
+
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
   font-size: 20px;
+  line-height: 1.6;
+
   color: var(--text-soft);
 }
 
-/* GRID & RESPONSIVE LOGIC */
+/* =========================================================
+   GRID & RESPONSIVE LOGIC
+   ========================================================= */
+
 .grid {
   display: grid;
   gap: 32px;
 }
+
 .grid-4 {
   grid-template-columns: repeat(4, 1fr);
 }
+
 .grid-2x2 {
   grid-template-columns: repeat(2, 1fr);
 }
+
 .card {
   background: #ffffff;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 40px;
   transition: var(--transition);
+
   display: flex;
   flex-direction: column;
   height: 100%;
 }
+
 .card:hover {
   border-color: var(--primary);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
   transform: translateY(-4px);
 }
+
 .card h3 {
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
   font-size: 22px;
+  line-height: 1.25;
   font-weight: 700;
   margin-bottom: 12px;
 }
+
 .card p {
   color: var(--text-soft);
   font-size: 15px;
+  line-height: 1.6;
 }
 
-/* TECH, TEAM, & SHOWCASE */
+/* =========================================================
+   TECH, TEAM & SHOWCASE
+   ========================================================= */
+
 .tech-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -242,6 +402,7 @@ img {
   max-width: 800px;
   margin: 0 auto;
 }
+
 .tech-card {
   background: var(--bg-soft);
   padding: 32px;
@@ -249,9 +410,11 @@ img {
   text-align: center;
   transition: var(--transition);
 }
+
 .tech-card h3 {
   color: var(--primary);
   font-size: 18px;
+  line-height: 1.3;
   margin-bottom: 8px;
 }
 
@@ -262,6 +425,7 @@ img {
   max-width: 800px;
   margin: 0 auto;
 }
+
 .founder-card {
   background: #ffffff;
   border: 1px solid var(--border);
@@ -269,10 +433,12 @@ img {
   padding: 40px;
   text-align: center;
   transition: var(--transition);
+
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .founder-img {
   width: 160px;
   height: 160px;
@@ -281,10 +447,12 @@ img {
   margin-bottom: 24px;
   border: 4px solid var(--bg-soft);
 }
+
 .founder-card .role {
   color: var(--primary);
   font-weight: 700;
   font-size: 11px;
+  line-height: 1.3;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-top: 4px;
@@ -294,12 +462,14 @@ img {
   padding: 120px 0;
   background: var(--bg);
 }
+
 .case-box {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
   padding: 0 20px;
 }
+
 .metrics-row {
   display: flex;
   justify-content: center;
@@ -307,53 +477,69 @@ img {
   border-top: 1px solid var(--border);
   padding-top: 32px;
 }
+
 .metric-label {
   font-size: 11px;
   font-weight: 800;
+  line-height: 1.3;
   text-transform: uppercase;
   color: var(--primary);
   display: block;
   margin-bottom: 4px;
 }
 
-/* FOOTER & CTA */
+/* =========================================================
+   FOOTER & CTA
+   ========================================================= */
+
 .contact-cta {
   background: var(--bg);
   padding: 120px 0;
 }
+
 .cta-box {
   text-align: center;
 }
+
 .cta-channels {
   display: flex;
   justify-content: center;
   gap: 64px;
   margin-top: 40px;
 }
+
 .channel-label {
   font-size: 11px;
   font-weight: 800;
+  line-height: 1.3;
   text-transform: uppercase;
   color: var(--primary);
   margin-bottom: 8px;
   display: block;
 }
+
 .channel-link {
   font-size: 22px;
   font-weight: 700;
+  line-height: 1.3;
   color: var(--text-main);
 }
+
 .footer {
   padding: 40px 0;
   border-top: 1px solid var(--border);
 }
+
 .footer-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* RESPONSIVE BREAKPOINTS */
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
 @media (max-width: 1024px) {
   .grid-4,
   .grid-2x2,
@@ -361,39 +547,176 @@ img {
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .hero {
+    padding: 120px 0 100px;
+  }
 }
 
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
 @media (max-width: 640px) {
+  /*
+    IMPORTANT:
+    Give small phones a little more horizontal space.
+    32px + 32px is quite large on a 360px-wide phone.
+  */
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   .grid-4,
   .grid-2x2,
   .tech-grid,
   .team-grid {
     grid-template-columns: 1fr;
   }
+
+  /*
+    Smaller mobile header.
+  */
+  .nav {
+    height: 68px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
   .nav-links a:not(.nav-contact-link) {
     display: none;
   }
+
+  /*
+    IMPORTANT:
+    Do NOT use the old fixed 42px here.
+    clamp() allows the heading to scale naturally.
+  */
   .hero-title {
-    font-size: 42px;
+    font-size: clamp(40px, 12vw, 52px);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
   }
+
+  .hero {
+    padding: 96px 0 72px;
+  }
+
+  .hero-subtitle {
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
   .hero-actions {
     flex-direction: column !important;
     gap: 12px !important;
   }
+
   .hero-actions .btn {
     width: 100%;
     padding: 16px 24px;
   }
+
+  /*
+    Reduce section spacing on small screens.
+  */
+  .section,
+  .showcase-section,
+  .contact-cta {
+    padding: 72px 0;
+  }
+
+  .section-head {
+    margin-bottom: 40px;
+  }
+
+  .section-head h2 {
+    font-size: clamp(30px, 8vw, 38px);
+    line-height: 1.1;
+  }
+
+  .section-head p {
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  /*
+    Smaller cards on narrow screens.
+  */
+  .card {
+    padding: 28px 24px;
+  }
+
+  .founder-card {
+    padding: 24px;
+  }
+
+  .tech-card {
+    padding: 28px 24px;
+  }
+
+  /*
+    Prevent long email/contact text from causing
+    horizontal overflow on small phones.
+  */
+  .channel-link {
+    font-size: 19px;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
   .cta-channels {
     flex-direction: column;
     gap: 32px;
   }
+
   .metrics-row {
     flex-direction: column;
     gap: 24px;
     align-items: center;
   }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero {
+    padding-top: 80px;
+  }
+
+  .hero-title {
+    font-size: clamp(36px, 11vw, 44px);
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  .section-head h2 {
+    font-size: 30px;
+  }
+
+  .card {
+    padding: 24px 20px;
+  }
+
   .founder-card {
-    padding: 24px;
+    padding: 20px;
   }
 }
