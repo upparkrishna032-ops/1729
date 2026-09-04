@@ -1,4 +1,4 @@
-name: 1729 Build, Test, and Deploy
+name: 1729
 
 on:
   push:
